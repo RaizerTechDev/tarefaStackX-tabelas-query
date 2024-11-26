@@ -1,4 +1,4 @@
-# Organização Banco de Dados - Airbnb
+# Guia de Estrutura, Design e Implementação de Projetos com MongoDB e Mongoose!
 
 # Sumário
 

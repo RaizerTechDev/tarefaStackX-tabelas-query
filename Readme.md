@@ -50,7 +50,7 @@ Tabela - materia
 
 <img src ="././public/assets/images/doc.png" alt="Descrição da Imagem" height="45">
 
-[✨ **Clique aqui para saber mais da documentação** ✨](https://github.com/RaizerTechDev/tarefaStackX-organizacao-bd/blob/master/Documentation.md)
+[✨ **Clique aqui para saber mais da documentação** ✨](https://github.com/RaizerTechDev/tarefaStackX-tabelas-query/blob/master/Documentation.md)
 
 <br>
 
