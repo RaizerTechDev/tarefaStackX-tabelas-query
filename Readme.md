@@ -7,9 +7,9 @@
 - [Instalação](#instalação-com-bash)
 - [Gerenciamento de Tabelas - Operações de Listar e Deletar](#gerenciamento-de-tabelas---operações-de-listar-e-deletar)
 - [Demonstração Código Resumido](#demonstração-código-resumido)
-  - [- `models/User.js`](#--modelsuserjs)
-  - [- `database.js`](#--databasejs)
-  - [- `index.js`](#--indexjs)
+  - [- `models/Aluno.js`](#--modelsalunojs)
+  - [- `database/index.js`](#--databaseindexjs)
+  - [- `app.js`](#--appjs)
 
 ## 🌟 Objetivo:
 
@@ -169,7 +169,7 @@ module.exports = connectDB;
 
 <br>
 
-#### - `index.js`
+#### - `app.js`
 
 ```javascript
 const connectDB = require("./src/database");
