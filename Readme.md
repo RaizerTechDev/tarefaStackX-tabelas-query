@@ -44,6 +44,10 @@ Tabela - materia
 🎯 Crie uma matéria e um professor;
 🎯 Crie 1 prova para cada aluno nessa matéria e diga que nota eles tiraram.
 
+<br>
+
+---
+
 ## 📖 Documentação do Projeto
 
  <div align="center">
