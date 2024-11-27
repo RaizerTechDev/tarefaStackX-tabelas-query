@@ -1,18 +1,18 @@
-const connectDB = require("./src/database");
-const seedData = require("./src/seed/seedData");
-const Aluno = require("./src/models/Aluno");
-const Materia = require("./src/models/Materia");
-const Prova = require("./src/models/Prova");
+const connectDB = require('./src/database');
+const seedData = require('./src/seed/seedData');
+const Aluno = require('./src/models/Aluno');
+const Materia = require('./src/models/Materia');
+const Prova = require('./src/models/Prova');
 
 // Adicionando a dependência para criar a tabela
-const Table = require("cli-table3");
+const Table = require('cli-table3');
 
 const showTables = async () => {
   try {
     // Buscar todos os alunos
     const alunos = await Aluno.find().lean();
     const tableAlunos = new Table({
-      head: ["ID", "Nome", "Data de Nascimento"],
+      head: ['ID', 'Nome', 'Data de Nascimento'],
       colWidths: [34, 34, 34], // Ajuste da largura das colunas
     });
     alunos.forEach((aluno) => {
@@ -22,15 +22,15 @@ const showTables = async () => {
         new Date(aluno.data_nascimento).toLocaleDateString(),
       ]);
     });
-    console.log("Tabela Alunos:");
+    console.log('Tabela Alunos:');
     console.log(tableAlunos.toString());
 
     // Buscar todas as matérias
     const materias = await Materia.find()
-      .populate("id_professor", "nome")
+      .populate('id_professor', 'nome')
       .lean();
     const tableMaterias = new Table({
-      head: ["ID", "Nome", "Professor"],
+      head: ['ID', 'Nome', 'Professor'],
       colWidths: [34, 34, 34],
     });
     materias.forEach((materia) => {
@@ -40,16 +40,16 @@ const showTables = async () => {
         materia.id_professor._id.toString(),
       ]);
     });
-    console.log("Tabela Matérias:");
+    console.log('Tabela Matérias:');
     console.log(tableMaterias.toString());
 
     // Buscar todas as provas
     const provas = await Prova.find()
-      .populate("id_aluno", "nome")
-      .populate("id_materia", "nome")
+      .populate('id_aluno', 'nome')
+      .populate('id_materia', 'nome')
       .lean();
     const tableProvas = new Table({
-      head: ["ID", "Aluno", "Matéria", "Nota", "Data"],
+      head: ['ID', 'Aluno', 'Matéria', 'Nota', 'Data'],
       colWidths: [34, 34, 34, 10, 20], // Definir largura de colunas
     });
 
@@ -63,10 +63,10 @@ const showTables = async () => {
       ]);
     });
 
-    console.log("Tabela Provas:");
+    console.log('Tabela Provas:');
     console.log(tableProvas.toString());
   } catch (error) {
-    console.error("Erro ao exibir dados:", error);
+    console.error('Erro ao exibir dados:', error);
   }
 };
 

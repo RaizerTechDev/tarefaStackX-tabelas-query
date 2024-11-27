@@ -1,27 +1,27 @@
-const Aluno = require("../models/Aluno");
-const Professor = require("../models/Professor");
-const Materia = require("../models/Materia");
-const Prova = require("../models/Prova");
+const Aluno = require('../models/Aluno');
+const Professor = require('../models/Professor');
+const Materia = require('../models/Materia');
+const Prova = require('../models/Prova');
 
 const seedData = async () => {
   try {
     // Criando professor
     const professor = await Professor.create({
-      nome: "Prof. João Silva",
-      data_nascimento: new Date("1975-05-15"),
+      nome: 'Prof. João Silva',
+      data_nascimento: new Date('1975-05-15'),
     });
 
     // Criando matéria
     const materia = await Materia.create({
-      nome: "Matemática",
+      nome: 'Matemática',
       id_professor: professor._id,
     });
 
     // Criando alunos
     const alunos = await Aluno.insertMany([
-      { nome: "Lucas Gabriel", data_nascimento: new Date("2005-03-20") },
-      { nome: "Gabriel Menezes", data_nascimento: new Date("2004-11-05") },
-      { nome: "Glória Parisi", data_nascimento: new Date("2006-07-15") },
+      { nome: 'Lucas Gabriel', data_nascimento: new Date('2005-03-20') },
+      { nome: 'Gabriel Menezes', data_nascimento: new Date('2004-11-05') },
+      { nome: 'Glória Parisi', data_nascimento: new Date('2006-07-15') },
     ]);
 
     // Criando provas
@@ -46,9 +46,9 @@ const seedData = async () => {
       },
     ]);
 
-    console.log("Dados inseridos com sucesso!");
+    console.log('Dados inseridos com sucesso!');
   } catch (error) {
-    console.error("Erro ao inserir dados:", error);
+    console.error('Erro ao inserir dados:', error);
   }
 };
 

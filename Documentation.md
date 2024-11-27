@@ -104,14 +104,14 @@ Cada tabela contém campos essenciais para sua funcionalidade:
 #### - `models/Aluno.js`
 
 ```javascript
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const AlunoSchema = new mongoose.Schema({
   nome: { type: String, required: true },
   data_nascimento: { type: Date, required: true },
 });
 
-module.exports = mongoose.model("Aluno", AlunoSchema);
+module.exports = mongoose.model('Aluno', AlunoSchema);
 ```
 
 <br>
@@ -119,14 +119,14 @@ module.exports = mongoose.model("Aluno", AlunoSchema);
 #### - `models/Professor.js`
 
 ```javascript
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const ProfessorSchema = new mongoose.Schema({
   nome: { type: String, required: true },
   data_nascimento: { type: Date, required: true },
 });
 
-module.exports = mongoose.model("Professor", ProfessorSchema);
+module.exports = mongoose.model('Professor', ProfessorSchema);
 ```
 
 <br>
@@ -134,18 +134,18 @@ module.exports = mongoose.model("Professor", ProfessorSchema);
 #### - `models/Materia.js`
 
 ```javascript
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const MateriaSchema = new mongoose.Schema({
   nome: { type: String, required: true },
   id_professor: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Professor",
+    ref: 'Professor',
     required: true,
   },
 });
 
-module.exports = mongoose.model("Materia", MateriaSchema);
+module.exports = mongoose.model('Materia', MateriaSchema);
 ```
 
 <br>
@@ -156,19 +156,19 @@ module.exports = mongoose.model("Materia", MateriaSchema);
 const ProvaSchema = new mongoose.Schema({
   id_aluno: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Aluno",
+    ref: 'Aluno',
     required: true,
   },
   id_materia: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Materia",
+    ref: 'Materia',
     required: true,
   },
   nota: { type: Number, required: true },
   data_da_prova: { type: Date, required: true },
 });
 
-module.exports = mongoose.model("Prova", ProvaSchema);
+module.exports = mongoose.model('Prova', ProvaSchema);
 ```
 
 ---

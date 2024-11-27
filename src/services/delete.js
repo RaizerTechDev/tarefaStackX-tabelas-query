@@ -1,15 +1,15 @@
-require("dotenv").config();
-const mongoose = require("mongoose");
-const Aluno = require("../models/Aluno");
-const Professor = require("../models/Professor");
-const Materia = require("../models/Materia");
-const Prova = require("../models/Prova");
+require('dotenv').config();
+const mongoose = require('mongoose');
+const Aluno = require('../models/Aluno');
+const Professor = require('../models/Professor');
+const Materia = require('../models/Materia');
+const Prova = require('../models/Prova');
 
 const connectDB = async () => {
   const uri = process.env.MONGODB_URI;
 
   if (!uri) {
-    console.error("Erro: MONGODB_URI não está definido no arquivo .env");
+    console.error('Erro: MONGODB_URI não está definido no arquivo .env');
     process.exit(1);
   }
 
@@ -18,7 +18,7 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log("Conectado ao MongoDB!");
+    console.log('Conectado ao MongoDB!');
 
     // Chamar as funções de exclusão após conectar ao banco de dados
     await deleteAlunos();
@@ -28,7 +28,7 @@ const connectDB = async () => {
 
     process.exit(0); // Finaliza o processo com sucesso após as exclusões
   } catch (err) {
-    console.error("Erro ao conectar ao MongoDB:", err);
+    console.error('Erro ao conectar ao MongoDB:', err);
     process.exit(1);
   }
 };
@@ -37,9 +37,9 @@ const connectDB = async () => {
 const deleteAlunos = async () => {
   try {
     const result = await Aluno.deleteMany({});
-    console.log("Alunos excluídos:", result);
+    console.log('Alunos excluídos:', result);
   } catch (err) {
-    console.error("Erro ao excluir alunos:", err);
+    console.error('Erro ao excluir alunos:', err);
   }
 };
 
@@ -47,9 +47,9 @@ const deleteAlunos = async () => {
 const deleteProfessores = async () => {
   try {
     const result = await Professor.deleteMany({});
-    console.log("Professores excluídos:", result);
+    console.log('Professores excluídos:', result);
   } catch (err) {
-    console.error("Erro ao excluir professores:", err);
+    console.error('Erro ao excluir professores:', err);
   }
 };
 
@@ -57,9 +57,9 @@ const deleteProfessores = async () => {
 const deleteMaterias = async () => {
   try {
     const result = await Materia.deleteMany({});
-    console.log("Materias excluídos:", result);
+    console.log('Materias excluídos:', result);
   } catch (err) {
-    console.error("Erro ao excluir materias:", err);
+    console.error('Erro ao excluir materias:', err);
   }
 };
 
@@ -67,9 +67,9 @@ const deleteMaterias = async () => {
 const deleteProvas = async () => {
   try {
     const result = await Prova.deleteMany({});
-    console.log("Provas excluídos:", result);
+    console.log('Provas excluídos:', result);
   } catch (err) {
-    console.error("Erro ao excluir provas:", err);
+    console.error('Erro ao excluir provas:', err);
   }
 };
 

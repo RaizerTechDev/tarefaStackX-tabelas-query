@@ -14,5 +14,12 @@
     "cli-table3": "^0.6.5",
     "dotenv": "^16.4.5",
     "mongoose": "^8.8.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.4.1"
   }
 }
