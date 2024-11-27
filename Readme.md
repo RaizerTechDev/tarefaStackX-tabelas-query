@@ -1,4 +1,4 @@
-# Tarefa - Gerenciamento Banco de Dados
+# Tarefa - Banco de Dados -Tabela Query
 
 ## Índice
 
@@ -87,6 +87,7 @@ npm install dotenv mongoose cli-table3
 ```
 
 - Instalando pacotes para formatação
+
 ```
 npm install --save-dev eslint eslint-config-prettier eslint-plugin-prettier prettier
 ```
@@ -134,14 +135,14 @@ node src/services/delete.js
 #### - `models/Aluno.js`
 
 ```javascript
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const AlunoSchema = new mongoose.Schema({
   nome: { type: String, required: true },
   data_nascimento: { type: Date, required: true },
 });
 
-module.exports = mongoose.model("Aluno", AlunoSchema);
+module.exports = mongoose.model('Aluno', AlunoSchema);
 ```
 
 <br>
@@ -149,22 +150,22 @@ module.exports = mongoose.model("Aluno", AlunoSchema);
 #### - `database/index.js`
 
 ```javascript
-const mongoose = require("mongoose");
-require("dotenv").config();
+const mongoose = require('mongoose');
+require('dotenv').config();
 
 const connectDB = async () => {
   const uri = process.env.MONGODB_URI;
 
   if (!uri) {
-    console.error("Erro: MONGODB_URI não está definido no arquivo .env");
+    console.error('Erro: MONGODB_URI não está definido no arquivo .env');
     process.exit(1);
   }
 
   try {
     await mongoose.connect(uri);
-    console.log("Conectado ao MongoDB!");
+    console.log('Conectado ao MongoDB!');
   } catch (err) {
-    console.error("Erro ao conectar ao MongoDB:", err);
+    console.error('Erro ao conectar ao MongoDB:', err);
     process.exit(1);
   }
 };
@@ -177,9 +178,9 @@ module.exports = connectDB;
 #### - `app.js`
 
 ```javascript
-const connectDB = require("./src/database");
-const seedData = require("./src/seed/seedData");
-const Aluno = require("./src/models/Aluno");
+const connectDB = require('./src/database');
+const seedData = require('./src/seed/seedData');
+const Aluno = require('./src/models/Aluno');
 
 const start = async () => {
   await connectDB();
